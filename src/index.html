@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title></title>
+  <title>Cryptocurrency Exchanges</title>
 </head>
 <body>
-  
+  <h1>Top 3 Traded Cryptocurrency</h1>
+  <div class="container">
+    <div>
+      <form id="crytocurrencies">
+        <h2>Enter $ Amount: </h2>
+          <input type="number" id="usd" min="0.01" step="0.01" required/>
+          <label for="usd">USD</label>
+        <h2>Choose a Cryptocurrency: </h2>
+          <select class="form-control" id="cryptocurrencies">
+            <option value="1">Bitcoin</option>
+            <option value="2">Ethereum</option>
+            <option value="3">Tether</option>
+          </select>
+          <button type="button" class="btn-dark" id="exchange">Show Exchange!</button>
+      </form>
+      <div class="showCrypto">
+        <h2>You can buy this much <span id="chosen-crypto"></span></h2>
+        <p id="crypto-amount"></p>
+      </div>
+      <div class="showErrors"></div>
+  </div>
 </body>
 </html>
+
