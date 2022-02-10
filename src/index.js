@@ -24,13 +24,21 @@ function converter(body, number, chosenCrypto) {
 }
 
 $(document).ready(function() {
-  let promise = CryptoService.getCrypto();
+  let promise = CryptoService.getCrypto("&rank&per-page=3");
   promise.then(function(response) {
     const body = JSON.parse(response);
-    $("#rank1").
+    $("#rank1").text(`${body[0].name}`);
+    $("#rank2").text(`${body[1].name}`);
+    $("#rank3").text(`${body[2].name}`);
+    let icon1Url = body[0].logo_url;
+    $('#showIcon1').attr('src', icon1Url);
+    let icon2Url = body[1].logo_url;
+    $('#showIcon2').attr('src', icon2Url);
+    let icon3Url = body[2].logo_url;
+    $('#showIcon3').attr('src', icon3Url);
   })
   $("#exchange").click(function() {
-    let promise = CryptoService.getCrypto();
+    let promise = CryptoService.getCrypto("&ids=BTC,ETH,USDT");
     promise.then( function(response) {
       const body = JSON.parse(response);
       let chosenCrypto = $("#cryptocurrencies").val();

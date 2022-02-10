@@ -1,8 +1,9 @@
 export default class CryptoService {
-  static getCrypto() {
+  static getCrypto(searchParams) {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `https://api.nomics.com/v1/currencies/ticker?key=${process.env.API_KEY}&ids=BTC,ETH,USDT`;
+      const url = `https://api.nomics.com/v1/currencies/ticker?key=${process.env.API_KEY}${searchParams}`;
+      
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
