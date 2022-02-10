@@ -2,7 +2,7 @@ export default class CryptoService {
   static getCrypto() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `https://api.nomics.com/v1/currencies/ticker?ids=BTC,ETH,USDT&key=${API_KEY}`;
+      const url = `https://api.nomics.com/v1/currencies/ticker?key=${process.env.API_KEY}&ids=BTC,ETH,USDT`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
@@ -14,12 +14,4 @@ export default class CryptoService {
       request.send();
     });
   }
-  converter(body, number) {
-const btc =parseFloat(body[0].price)
-  }
 }
-
-//https://api.nomics.com/v1/currencies/ticker?ids=BTC,ETH,USDT&key=${API_KEY}
-//
-
-//getCrypto parameter crypto?

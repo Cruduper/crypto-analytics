@@ -7,21 +7,31 @@
   <h1>Top 3 Traded Cryptocurrency</h1>
   <div class="container">
     <div>
+      <h3>Number <span id="rank1"></span>: </h3>
+      <div id="icon1"><img id="showBtcIcon" src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg" alt="Bitcoin icon"></div>
+      
+      <h3>Number 2: </h3>
+      <div id="icon2"><img id="showEthIcon" src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg" alt="Ethereum icon"></div>
+      <div id="rank2"></div>
+      <h3>Number 3:</h3>
+      <div id="icon3"><img id="showUsdtIcon" src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/usdt.svg" alt="Tether icon"></div>
+      <div id="rank3"></div>
+    </div>
       <form id="crytocurrencies">
         <h2>Enter $ Amount: </h2>
           <input type="number" id="usd" min="0.01" step="0.01" required/>
           <label for="usd">USD</label>
         <h2>Choose a Cryptocurrency: </h2>
           <select class="form-control" id="cryptocurrencies">
-            <option value="1">Bitcoin</option>
-            <option value="2">Ethereum</option>
-            <option value="3">Tether</option>
+            <option value="Bitcoin">Bitcoin</option>
+            <option value="Ethereum">Ethereum</option>
+            <option value="Tether">Tether</option>
           </select>
           <button type="button" class="btn-dark" id="exchange">Show Exchange!</button>
       </form>
       <div class="showCrypto">
-        <h2>You can buy this much <span id="chosen-crypto"></span></h2>
-        <p id="crypto-amount"></p>
+        <h2>You can buy this much <span id="chosen-crypto"></span>: <span id="crypto-amount"></span></h2>
+        
       </div>
       <div class="showErrors"></div>
   </div>
